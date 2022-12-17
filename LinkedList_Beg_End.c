@@ -99,6 +99,21 @@ void display(node first) {
     }
 }
 
+void insert_any(int item, int position, node first) {
+    node temp, newnode;
+    newnode = malloc(sizeof(struct NODE));
+    int i = 1;
+    temp = first;
+    (newnode->value) = item;
+    (newnode->next) = NULL;
+    while (i < (position - 1)) {
+        temp = temp->next;
+        i++;
+    }
+    newnode->next = temp->next;
+    temp->next = newnode;
+}
+
 int main() {
     int choice, item, x;
     node first = NULL;
@@ -124,6 +139,14 @@ int main() {
             break;
         case 5:
             delete_end(first);
+            break;
+            
+        case 6:
+            printf("Enter the position to be inserted : ");
+            scanf("%d", &pos);
+            printf("Enter the element to be inserted : ");
+            scanf("%d", &x);
+            insert_at_any_position(x, pos, first);
             break;
 
         default:
