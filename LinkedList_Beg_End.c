@@ -88,7 +88,7 @@ int main() {
     int choice, item, x;
     node first = NULL;
     while (1) {
-        printf("\n\n 1. Insert beginning 2. Insert end 3. Display 4. Delete beginning 5. Delete ending \n");
+        printf("\n\n 1. Insert beginning 2. Insert end 3. Display 4. Insert anywhere\n");
         scanf("%d", &choice);
         switch (choice) {
         case 1:
@@ -103,15 +103,8 @@ int main() {
             break;
         case 3:
             display(first);
-            break;
+            break;            
         case 4:
-            delete_beg(first);
-            break;
-        case 5:
-            delete_end(first);
-            break;
-            
-        case 6:
             printf("Enter the position to be inserted : ");
             scanf("%d", &pos);
             printf("Enter the element to be inserted : ");
