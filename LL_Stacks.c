@@ -31,28 +31,15 @@ node insert_beg(int item, node first) {
     }
 }
 
-node insert_end(int item, node first) {
-    node temp = (node)malloc(sizeof(struct NODE));
-    
-    if (temp == NULL) {
-        printf("\nMemory not allocated");
-    }
-    
-    (temp->value) = item;
-    (temp->next) = NULL;
-    
-    if ((first->next) == NULL) {
-        (first->next) = temp;
-        return first;
+node delete_beg(node first) {
+    if (first == NULL) {
+        printf("\nUnderflow");
+        exit(0);
     } else {
-        node last = first;
-        
-        while ((last->next) != NULL) {
-            last = (last->next);
-        }
-        
-        (last->next) = temp;
-        return first;
+        node temp;
+        temp = first;
+        temp = (first->next);
+        return temp;
     }
 }
 
