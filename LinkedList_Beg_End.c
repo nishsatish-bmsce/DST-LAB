@@ -30,18 +30,6 @@ node insert_beg(int item, node first) {
     }
 }
 
-node delete_beg(node first) {
-    if (first == NULL) {
-        printf("\nUnderflow");
-        exit(0);
-    } else {
-        node temp;
-        temp = first;
-        temp = (first->next);
-        return temp;
-    }
-}
-
 node insert_end(int item, node first) {
     node temp = (node)malloc(sizeof(struct NODE));
     
@@ -64,24 +52,6 @@ node insert_end(int item, node first) {
         
         (last->next) = temp;
         return first;
-    }
-}
-
-void delete_end(node first) {
-    if (first == NULL) {
-        printf("\n Underflow");
-    } else {
-        node prev, curr;
-        prev = NULL;
-        curr = first;
-        
-        while ((curr->next) != NULL) {
-            prev = curr;
-            curr = (curr->next);
-        }
-        printf("The deleted value is %d", (curr->value));
-        (prev->next) = NULL;
-        free(curr);
     }
 }
 
